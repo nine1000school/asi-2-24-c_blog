@@ -1,6 +1,8 @@
 import FormField from "@/components/FormField.jsx"
 import Page from "@/components/Page.jsx"
+import { AppContext } from "@/pages/_app.jsx"
 import { Form, Formik } from "formik"
+import { useContext } from "react"
 import * as yup from "yup"
 
 const initialValues = {
@@ -16,8 +18,8 @@ const validationSchema = yup.object().shape({
   userType: yup.string().oneOf(["seller", "buyer"]).required().label("Type"),
 })
 
-const CreateUserPage = (props) => {
-  const { createUser } = props
+const CreateUserPage = () => {
+  const { createUser } = useContext(AppContext)
   const handleSubmit = (
     { username, email, password, userType },
     { resetForm, setErrors }

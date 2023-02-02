@@ -1,13 +1,17 @@
+import { AppContext } from "@/pages/_app.jsx"
 import clsx from "clsx"
 import { Field } from "formik"
+import { useContext } from "react"
 
 const FormField = (props) => {
   const { as: Component = "input", className, name, ...otherProps } = props
+  const { x } = useContext(AppContext)
 
   return (
     <Field name={name}>
       {({ field, meta: { error, touched } }) => (
         <label className="flex flex-col gap-2">
+          {x}
           <Component
             {...field}
             {...otherProps}

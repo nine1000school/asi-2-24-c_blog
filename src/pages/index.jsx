@@ -1,8 +1,10 @@
 import Page from "@/components/Page.jsx"
 import UserList from "@/components/UserList.jsx"
+import { AppContext } from "@/pages/_app.jsx"
+import { useContext } from "react"
 
-const IndexPage = (props) => {
-  const { users, deleteUser } = props
+const IndexPage = () => {
+  const { users, deleteUser } = useContext(AppContext)
 
   return (
     <Page>
