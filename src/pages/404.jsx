@@ -1,4 +1,4 @@
-const { default: Page } = require("@/components/Page.jsx")
+import Page from "@/web/components/Page.jsx"
 
 const NotFoundPage = () => (
   <Page>
